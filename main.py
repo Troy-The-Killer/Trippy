@@ -87,8 +87,6 @@ async def on_message(message):
 	# -------------
 	if message.content.lower().startswith('^help'):
 		help1 = discord.Embed(
-			title=':revolving_hearts: Comandos',
-			color=0x000001,
 			desdescription='Não tenho comandos! :cry:'
 		)
 		await client.send_message(message.channel, embed=help1)
