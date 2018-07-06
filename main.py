@@ -82,6 +82,25 @@ async def on_member_remove(member):
 
 @client.event
 async def on_message(message):
+	if message.content.lower().startswith('^tban'):
+		if not message.author.server_permissions.ban_members:
+		    return await client.send_message(message.channel, "`Permissão inválida:` Você precisa da permissão para banir")
+		try:
+		    user = message.mentions[0]
+		    await client.send_message(message.channel, "O usuário foi banido com sucesso!")
+		    banemb = discord.Embed(
+			title="Banimento"
+		    )
+		    banemb.add_field(name="Banido:", value=user)
+		    banemb.add_field(name="Motivo:", value=message.content[27:])
+		    banemb.add_field(name="Autor:", value=message.author.mention)
+		    mensagem.set_image(url="https://discordapp.com/assets/62ac6016dc438a1fe4926ed43d3fe280.webm")
+		    await client.send_message(message.channel, embed=banemb)
+		    await client.ban(user, delete_message_days=7)
+		except:
+		    await client.send_message(message.channel, "Você deve especificar um usuário!")
+		finally:
+		    pass
 
 	# ^avatar → Vê imagem de perfil dos membros / Vê sua própria imagem:
 	# ------------------------------------------------------------------
