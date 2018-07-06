@@ -137,27 +137,23 @@ async def on_message(message):
 			
 	if message.content.lower().startswith('^mute'):
 		if not message.author.server_permissions.manage_roles:
-			return await client.send_message(message.channel,
-							 "`Permissão inválida:` Você precisa da permissão para mutar!")
+			return await client.send_message(message.channel, "`Permissão inválida:` Você precisa da permissão para mutar!")
 		try:
 			user = message.mentions[0]
-			await client.send_message(message.channel,
-						  "**O usuario <@{}> foi mutado com sucesso do servidor.**".format(user.id))
+			await client.send_message(message.channel, "O usuário <@{}> foi mutado com sucesso!**".format(user.id))
 			role = discord.utils.find(lambda r: r.name == "Muted", message.server.roles)
 			await client.add_roles(user, role)
 		except:
-			await client.send_message(message.channel, "**Você deve especificar um usuario!**")
+			await client.send_message(message.channel, "Você deve especificar um usuário!")
 		finally:
 			pass
 		
 	if message.content.lower().startswith('^unmute'):
 		if not message.author.server_permissions.manage_roles:
-			return await client.send_message(message.channel,
-							 "`Permissão inválida:` Você precisa da permissão!")
+			return await client.send_message(message.channel, "`Permissão inválida:` Você precisa da permissão!")
 		try:
 			user = message.mentions[0]
-		    	await client.send_message(message.channel,
-						  "O usuário <@{}> foi desmultado com sucesso!".format(user.id))
+		    	await client.send_message(message.channel, "O usuário <@{}> foi desmultado com sucesso!".format(user.id))
 			
 			role = discord.utils.find(lambda r: r.name == "Muted", message.server.roles)
 			await client.remove_roles(user, role)
