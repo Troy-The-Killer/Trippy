@@ -83,11 +83,6 @@ async def on_member_remove(member):
 @client.event
 async def on_message(message):
 	
-	# ^help → Help:
-	# -------------
-	if message.content.lower().startswith('^help'):
-		await client.send_message(message.channel, "Comandos!")
-	
 	# ^ban → Banir os usuários do servidor:
 	# ------------------------------
 	
