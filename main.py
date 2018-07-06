@@ -82,13 +82,14 @@ async def on_member_remove(member):
 
 @client.event
 async def on_message(message):
+	
     	if message.content.lower().startswith('^help'):
         	help1 = discord.Embed(
-            	title=':gear: Comandos Livres',
-            	color=0x000001,
-            	description='`^avatar` | <**^avatar**> » Vê seu avatar / <^avatar @membro> Vê o avatar dos membros'
-                        	'`^avisos` | <**^avisos** mensagem> » Avisar os membros sobre eventos / sorteios'
-                        	'`^userinfo` | <**^userinfo**> » Vê suas informações',
+            		title=':gear: Comandos Livres',
+            		color=0x000001,
+            		description='`^avatar` | <**^avatar**> » Vê seu avatar / <^avatar @membro> Vê o avatar dos membros'
+                        	    '`^avisos` | <**^avisos** mensagem> » Avisar os membros sobre eventos / sorteios'
+                        	    '`^userinfo` | <**^userinfo**> » Vê suas informações',
         	)
         	await client.send_message(message.channel, embed=help1)
 	
