@@ -86,10 +86,7 @@ async def on_message(message):
 	# ^help → Help:
 	# -------------
 	if message.content.lower().startswith('^help'):
-		help1 = discord.Embed(
-			desdescription='Não tenho comandos! :cry:'
-		)
-		await client.send_message(message.channel, embed=help1)
+		await client.send_message(message.channel, "Comandos!")
 	
 	# ^ban → Banir os usuários do servidor:
 	# ------------------------------
