@@ -83,16 +83,6 @@ async def on_member_remove(member):
 @client.event
 async def on_message(message):
 	
-    	if message.content.lower().startswith('^help'):
-        	help1 = discord.Embed(
-            		title=':gear: Comandos Livres',
-            		color=0x000001,
-            		description='`^avatar` | <**^avatar**> » Vê seu avatar / <^avatar @membro> Vê o avatar dos membros'
-                        	    '`^avisos` | <**^avisos** mensagem> » Avisar os membros sobre eventos / sorteios'
-                        	    '`^userinfo` | <**^userinfo**> » Vê suas informações',
-        	)
-        	await client.send_message(message.channel, embed=help1)
-	
 	# ^ban → Banir os usuários do servidor:
 	# ------------------------------
 	
@@ -144,5 +134,20 @@ async def on_message(message):
 			avatar2.set_image(url=membro.avatar_url)
 			await client.send_message(message.channel, embed=avatar2)
 
-
+	if message.content.lower().startswith('^unmute'):
+		if not message.author.server_permissions.manage_roles:
+			return await client.send_message(message.channel,
+							 "`Permissão inválida:` Você precisa da permissão para mutar!")
+		try:
+			user = message.mentions[0]
+		    	await client.send_message(message.channel,
+						  "**O usuário <@{}> foi mutado com sucesso do servidor.**".format(user.id))
+			
+			role = discord.utils.find(lambda r: r.name == "Muted", message.server.roles)
+			await client.remove_roles(user, role)
+		except:
+			await client.send_message(message.channel, "Você deve especificar um usuário!")
+		finally:
+			pass
+		
 client.run(token)
