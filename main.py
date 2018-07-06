@@ -83,10 +83,27 @@ async def on_member_remove(member):
 @client.event
 async def on_message(message):
 	
-	# Banir os usuários do servidor:
+	# ^help → Help:
+	# -------------
+	if message.content.lower().startswith('^help'):
+		help1 = discord.Embed(
+			title=':revolving_hearts: Comandos',
+			color=0x000001,
+			desdescription=':gear: **Comandos Livres**'
+				       '`^avatar` | <^avatar> » Vê seu avatar / <^avatar @membro> Vê o avatar dos membros'
+				       '`^avisos` | <^avisos `mensagem`> » Avisar os membros sobre eventos / sorteios'
+				       '`^userinfo` | <^userinfo> » Vê suas informações'
+				       ':gear: **Comandos de Administração**'
+				       '`^ban` | <^ban @membro> » Banir membros'
+				       '`^unban` | <^unban @membro> » Tirar o ban do usuário' 
+				       '`^mute` | <^mute @membro> » Mutar usuário'
+				       '`^unmute` | <^unmute @membro> » Desmultar usuário',
+		)
+	
+	# ^ban → Banir os usuários do servidor:
 	# ------------------------------
 	
-	if message.content.lower().startswith('^tban'):
+	if message.content.lower().startswith('^ban'):
 		if not message.author.server_permissions.ban_members:
 		    return await client.send_message(message.channel, "`Permissão inválida:` Você precisa da permissão para banir")
 		try:
