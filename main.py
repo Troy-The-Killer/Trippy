@@ -89,18 +89,8 @@ async def on_message(message):
             	description='`^avatar` | <**^avatar**> » Vê seu avatar / <^avatar @membro> Vê o avatar dos membros'
                         	'`^avisos` | <**^avisos** mensagem> » Avisar os membros sobre eventos / sorteios'
                         	'`^userinfo` | <**^userinfo**> » Vê suas informações',
-        )
-        help2 = discord.Embed(
-            	title=':gear: Comandos de Administração',
-            	color=0x000001,
-            	description='`^ban` | <**^ban** @membro> » Banir membros'
-                 	       '`^unban` | <**^unban** @membro> » Tirar o ban do usuário'
-                        	'`^mute` | <**^mute** @membro> » Mutar usuário'
-                        	'`^unmute` | <**^unmute** @membro> » Desmultar usuário',
-        )
-
-        await client.send_message(message.channel, embed=help1)
-        await client.send_message(message.channel, embed=help2)
+        	)
+        	await client.send_message(message.channel, embed=help1)
 	
 	# ^ban → Banir os usuários do servidor:
 	# ------------------------------
