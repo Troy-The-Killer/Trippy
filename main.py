@@ -94,7 +94,7 @@ async def on_message(message):
 		    banemb.add_field(name="Banido:", value=user)
 		    banemb.add_field(name="Motivo:", value=message.content[27:])
 		    banemb.add_field(name="Autor:", value=message.author.mention)
-		    mensagem.set_image(url="https://discordapp.com/assets/62ac6016dc438a1fe4926ed43d3fe280.webm")
+		    banemb.set_image(url="https://discordapp.com/assets/62ac6016dc438a1fe4926ed43d3fe280.webm")
 		    await client.send_message(message.channel, embed=banemb)
 		    await client.ban(user, delete_message_days=7)
 		except:
