@@ -137,7 +137,7 @@ async def on_message(message):
 	if message.content.lower().startswith('^unmute'):
 		if not message.author.server_permissions.manage_roles:
 			return await client.send_message(message.channel,
-							 "`Permissão inválida:` Você precisa da permissão para mutar!")
+							 "`Permissão inválida:` Você precisa da permissão!")
 		try:
 			user = message.mentions[0]
 		    	await client.send_message(message.channel,
