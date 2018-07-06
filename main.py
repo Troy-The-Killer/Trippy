@@ -93,7 +93,7 @@ async def on_message(message):
 		    user = message.mentions[0]
 		    await client.send_message(message.channel, "O usuário foi banido com sucesso!")
 		    banemb = discord.Embed(
-			title=":Ban: Banimento"
+			title=":Ban: Banimento",
 			color=0xff0000
 		    )
 		    banemb.add_field(name=":bust_in_silhouette: Usuário:", value=user)
