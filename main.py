@@ -89,15 +89,15 @@ async def on_message(message):
 		help1 = discord.Embed(
 			title=':revolving_hearts: Comandos',
 			color=0x000001,
-			desdescription=':gear: **Comandos Livres**'
-				       '`^avatar` | <^avatar> » Vê seu avatar / <^avatar @membro> Vê o avatar dos membros'
-				       '`^avisos` | <^avisos `mensagem`> » Avisar os membros sobre eventos / sorteios'
-				       '`^userinfo` | <^userinfo> » Vê suas informações'
-				       ':gear: **Comandos de Administração**'
-				       '`^ban` | <^ban @membro> » Banir membros'
-				       '`^unban` | <^unban @membro> » Tirar o ban do usuário' 
-				       '`^mute` | <^mute @membro> » Mutar usuário'
-				       '`^unmute` | <^unmute @membro> » Desmultar usuário',
+			desdescription=':gear: **Comandos Livres**\n'
+				       '`^avatar` | <^avatar> » Vê seu avatar / <^avatar @membro> Vê o avatar dos membros\n'
+				       '`^avisos` | <^avisos `mensagem`> » Avisar os membros sobre eventos / sorteios\n'
+				       '`^userinfo` | <^userinfo> » Vê suas informações\n'
+				       ':gear: **Comandos de Administração**\n'
+				       '`^ban` | <^ban @membro> » Banir membros\n'
+				       '`^unban` | <^unban @membro> » Tirar o ban do usuário\n' 
+				       '`^mute` | <^mute @membro> » Mutar usuário\n'
+				       '`^unmute` | <^unmute @membro> » Desmultar usuário\n',
 		)
 	
 	# ^ban → Banir os usuários do servidor:
